@@ -1,0 +1,67 @@
+
+:root{--choc:#4b2e2b;--cream:rgba(247,239,230,0.95);--accent:#b98b67;--muted:#6b5a57}
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:transparent;color:var(--choc);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.0);backdrop-filter:blur(6px);padding:12px 0;border-bottom:1px solid rgba(75,46,43,0.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:64px;height:64px}
+.brand h1{margin:0;font-family:'Playfair Display',serif;color:var(--choc);font-size:20px}
+.tag{font-size:13px;color:var(--muted);margin:0}
+.nav{display:flex;align-items:center;gap:14px}
+.nav a{text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .25s ease;color:var(--choc)}
+.nav a:hover{background:var(--accent);color:white;transform:translateY(-3px)}
+.socials{display:flex;gap:8px;align-items:center}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:transparent;border:1px solid rgba(75,46,43,0.08);color:var(--choc);text-decoration:none;transition:all .2s ease}
+.socials a:hover{background:var(--accent);color:white;transform:scale(1.08)}
+
+/* Hero */
+.hero{padding:80px 0;background:linear-gradient(180deg, rgba(75,46,43,0.5), rgba(75,46,43,0.5)), url('https://source.unsplash.com/1600x900/?interior,design') center/cover no-repeat;color:white;text-align:center}
+.hero .inner{max-width:900px;margin:0 auto;background:rgba(255,255,255,0.02);padding:40px;border-radius:12px;backdrop-filter:blur(2px)}
+.hero h2{font-family:'Playfair Display',serif;font-size:36px;margin:0 0 12px}
+.cta{display:inline-block;background:var(--accent);color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+
+/* slideshow */
+.projects{padding:60px 0;background:transparent;text-align:center}
+.slideshow{position:relative;max-width:1000px;margin:0 auto}
+.slide{display:none;opacity:0;transition:opacity 1s ease-in-out}
+.slide.show{display:block;opacity:1}
+.slide img{width:100%;height:520px;object-fit:cover;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,0.15)}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.7);border:none;padding:10px;border-radius:8px;cursor:pointer}
+.prev:hover,.next:hover{background:var(--accent);color:white}
+.dots{margin-top:12px;display:flex;justify-content:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%;background:rgba(0,0,0,0.2);display:inline-block;cursor:pointer}
+.dot.active{background:var(--accent)}
+
+/* modal gallery */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;padding:24px;z-index:200}
+.modal-content{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:1200px;overflow:auto}
+.modal img{width:320px;border-radius:8px}
+.close{position:absolute;top:20px;right:40px;color:white;font-size:40px;cursor:pointer}
+
+/* sections */
+.section{padding:60px 0;background:transparent}
+.box{background:var(--cream);padding:20px;border-radius:10px;box-shadow:0 10px 24px rgba(0,0,0,0.06)}
+
+/* form */
+.form{max-width:720px;margin:0 auto;display:grid;gap:12px}
+.input,textarea,select{padding:12px;border-radius:8px;border:1px solid rgba(75,46,43,0.12);font-size:15px}
+.input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 6px 20px rgba(185,139,103,0.18);transform:translateY(-2px)}
+
+/* footer */
+footer{background:transparent;padding:36px 0;border-top:1px solid rgba(75,46,43,0.06)}
+.footer-inner{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.map{min-width:280px;flex:1}
+.contact-info{flex:1}
+.footer-social a{margin-right:8px;color:var(--choc);text-decoration:none;padding:8px;border-radius:8px;border:1px solid rgba(75,46,43,0.06)}
+.footer-social a:hover{background:var(--accent);color:white;transform:scale(1.05)}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{padding:60px 10px}
+  .slide img{height:320px}
+  .modal img{width:260px}
+  .header-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .nav{flex-wrap:wrap}
+}
